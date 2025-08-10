@@ -1,0 +1,77 @@
+sites:
+  leroy_merlin:
+    name: "Leroy Merlin"
+    base_url: "https://www.adeo.com/en/leroy-merlin/"
+    currency: "EUR"
+    mode: "static"
+    selectors:
+      product_card: "li.product-item, article.product-card, div.product-card"
+      name: ".product-item-name, .product-title, h3"
+      price: ".price, .product-price, .lm-price"
+      url: "a.product-link, a[href*='produit']"
+      brand: ".brand, .product-brand"
+      pack: ".pack, .product-pack-size"
+      image: "img"
+      availability: ".availability, .stock, .availability-status"
+      variation_badges: ".chip, .variant"
+    pagination:
+      next_selector: "a.next, li.pagination-next a"
+    categories:
+      tiles:
+        path: "/cat/produits/carrelage-et-parquet/carrelage-sol-et-mur/"
+        max_pages: 3
+      toilets:
+        path: "/cat/produits/salle-de-bains/wc/"
+        max_pages: 3
+      paint:
+        path: "/cat/produits/peinture-droguerie/peinture-d-interieur/"
+        max_pages: 3
+
+  castorama:
+    name: "Castorama"
+    base_url: "https://www.castorama.fr"
+    currency: "EUR"
+    mode: "static"
+    selectors:
+      product_card: "li.product__item, div.product-tile, article.product"
+      name: ".product__title, .product-title, h2"
+      price: ".product__price, .price, .sales"
+      url: "a.product__link, a.product-link"
+      brand: ".product-brand, .brand"
+      pack: ".pack-size, .unit, .size"
+      image: "img"
+      availability: ".availability, .stock"
+      variation_badges: ".variant, .option"
+    pagination:
+      next_selector: "a.pagination__next, a[rel='next']"
+    categories:
+      vanities:
+        path: "/s/salles_de_bains/meubles_salle_de_bains"
+        max_pages: 3
+      showers:
+        path: "/s/salles_de_bains/douches"
+        max_pages: 3
+
+  manomano:
+    name: "ManoMano"
+    base_url: "https://www.manomano.fr"
+    currency: "EUR"
+    mode: "dynamic"
+    selectors:
+      product_card: "article[data-testid='product-card'], div[data-testid='product-card']"
+      name: "[data-testid='product-card-title'], h2, h3"
+      price: "[data-testid='price-and-shipping-container'], .price"
+      url: "a[href*='p-'], a[href*='/prod-']"
+      brand: ".product-brand, [data-testid='brand']"
+      pack: ".pack, .unit"
+      image: "img"
+      availability: ".availability, .stock"
+      variation_badges: ".variant-badge"
+    pagination:
+      scrolls: 8
+      wait: 1.5
+    categories:
+      sinks:
+        path: "/c/lavabo-vasque-5108"
+      tiles:
+        path: "/carrelage-c730"
